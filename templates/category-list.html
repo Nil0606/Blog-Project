@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Categories</h1>
+<ul>
+    {% for cat in category_list %}
+    <li>
+        <h2><a href="{% url 'category' cat|slugify%}">{{cat}}</a></h2>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title%}Create New Blog Post{%endblock%}
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>Add Category</h1><br>
+<div class="form-group">
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-outline-info">ADD</button>
+</form></div>
+{% else %}
+<h1>You are Not Login</h1>
+{% endif %}
+
+{%endblock%}
