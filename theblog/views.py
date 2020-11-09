@@ -43,7 +43,6 @@ class UpadtepostView(UpdateView):
     form_class =UpdateForm
     template_name = 'update_post.html'
 
-
 class DeletePostView(DeleteView):
     model=models.Post
     template_name = 'delete_post.html'

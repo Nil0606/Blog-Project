@@ -9,8 +9,10 @@
         {{post.body|slice:":200"}}............<br>
         <p>{{post.date|date:'M d Y'}}</p>
         {% if user.is_authenticated %}
+        {% if user.id == post.auther.id %}
         <a href="/theblog/article/edit/{{post.id}}/" class="btn  btn-sm btn-info">Edit</a>
         <a href="/theblog/article/{{post.id}}/remove/" class="btn  btn-sm btn-danger">Delete</a>
+        {% endif %}
         {% endif  %}
     </li>
     {% endfor %}

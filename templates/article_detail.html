@@ -5,9 +5,12 @@
 <h1>{{post.title}}</h1>
 <small>By:{{post.auther}}</small>
 {% if user.is_authenticated %}
+{% if user.id == post.auther.id %}
+
         <a href="/theblog/article/edit/{{post.id}}/" class="btn  btn-sm btn-info">Edit</a>
         <a href="/theblog/article/{{post.id}}/remove/" class="btn  btn-sm btn-danger">Delete</a>
 {% endif  %}
+{% endif %}
 <hr>
 <p>
     {{post.body}}
