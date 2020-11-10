@@ -6,7 +6,6 @@
 <small>By:{{post.auther}}</small>
 {% if user.is_authenticated %}
 {% if user.id == post.auther.id %}
-
         <a href="/theblog/article/edit/{{post.id}}/" class="btn  btn-sm btn-info">Edit</a>
         <a href="/theblog/article/{{post.id}}/remove/" class="btn  btn-sm btn-danger">Delete</a>
 {% endif  %}
@@ -16,4 +15,11 @@
     {{post.body}}
 </p>
 <a class="btn btn-outline-info" href="/theblog/home/">Back</a>
+{% if user.is_authenticated %}
+<form action="/theblog/like/{{post.pk}}" method="POST">
+    {% csrf_token %}
+    <button class="btn btn-sm btn-outline-info" style="margin:20px;" type="submit" value="{{post.id}}" name="post_id">Like</button>
+</form>
+{% endif  %}
+<br><p>{{total_likes}} - Likes</p>
 {% endblock  %}
