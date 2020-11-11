@@ -18,7 +18,11 @@
 {% if user.is_authenticated %}
 <form action="/theblog/like/{{post.pk}}" method="POST">
     {% csrf_token %}
+    {%if liked %}
+    <button class="btn btn-sm btn-outline-info" style="margin:20px;" type="submit" value="{{post.id}}" name="post_id">UnLike</button>
+    {% else %}
     <button class="btn btn-sm btn-outline-info" style="margin:20px;" type="submit" value="{{post.id}}" name="post_id">Like</button>
+    {% endif %}
 </form>
 {% endif  %}
 <br><p>{{total_likes}} - Likes</p>
