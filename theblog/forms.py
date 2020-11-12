@@ -1,5 +1,6 @@
 from django import forms
 from .models import Post,Category
+
 choices=Category.objects.all().values_list('name','name')
 choices_list=[]
 for i in choices:

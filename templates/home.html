@@ -6,7 +6,7 @@
     {% for post in object_list %}
     <li>
         <a href="../article/{{post.id}}/">{{post.title}}</a> - {{post.auther}} - <a href="{% url 'category' post.category|slugify %}">{{post.category}}</a><br>
-        {{post.body|slice:":200"}}............<br>
+        {{post.body|safe|slice:":200"}}............<br>
         <p>{{post.date|date:'M d Y'}}</p>
         {% if user.is_authenticated %}
         {% if user.id == post.auther.id %}

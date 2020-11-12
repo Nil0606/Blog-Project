@@ -7,6 +7,7 @@
 <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
+    {{form.media}}
     <button type="submit" class="btn btn-outline-info">SAVE</button>
 </form></div>
 <h1>You Are Not Allowed..</h1>

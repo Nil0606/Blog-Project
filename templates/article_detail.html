@@ -12,7 +12,7 @@
 {% endif %}
 <hr>
 <p>
-    {{post.body}}
+    {{post.body|safe}}
 </p>
 <a class="btn btn-outline-info" href="/theblog/home/">Back</a>
 {% if user.is_authenticated %}
