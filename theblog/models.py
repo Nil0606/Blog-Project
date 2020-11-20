@@ -18,6 +18,7 @@ class Post(models.Model):
     body=RichTextField(blank=True,null=True)
     likes=models.ManyToManyField(User,related_name='blog_post')
     date=models.DateTimeField(auto_now_add=True,null=True)
+    snippet=models.TextField(default='First blog')
     category=models.CharField(max_length=255,default='Web Developement')
 
     def __str__(self):
