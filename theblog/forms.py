@@ -9,7 +9,7 @@ for i in choices:
 class PostForm(forms.ModelForm):
     class Meta:
         model=Post
-        fields=('title','title_tag','auther','category','body','snippet')
+        fields=('title','title_tag','auther','category','body','snippet','header_image')
         widgets={
             'title':forms.TextInput(attrs={'class':'form-control'}),
             'title_tag': forms.TextInput(attrs={'class':'form-control'}),
@@ -23,7 +23,7 @@ class PostForm(forms.ModelForm):
 class UpdateForm(forms.ModelForm):
     class Meta:
         model=Post
-        fields=('title','title_tag','category','body','snippet')
+        fields=('title','title_tag','category','body','snippet','header_image')
         widgets={
             'title':forms.TextInput(attrs={'class':'form-control'}),
             'title_tag': forms.TextInput(attrs={'class':'form-control'}),

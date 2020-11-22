@@ -11,6 +11,11 @@
 {% endif  %}
 {% endif %}
 <hr>
+{% if post.header_image %}
+
+<img src="{{post.header_image.url}}" width="200px" height="200px">
+
+{% endif %}
 <p>
     {{post.body|safe}}
 </p>
