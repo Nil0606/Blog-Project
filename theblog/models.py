@@ -30,3 +30,14 @@ class Post(models.Model):
 
     def total_likes(self):
         return self.likes.count()
+
+
+class Profile(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    username=models.CharField(max_length=150)
+    first_name=models.CharField(max_length=150,null=True)
+    last_name=models.CharField(max_length=150)
+    bio=models.CharField(max_length=300)
+    image=models.ImageField(null=True,blank=True,upload_to="profile_image/",default="default.png")
+
+
